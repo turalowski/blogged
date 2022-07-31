@@ -1,0 +1,51 @@
+.Post {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  .content {
+    .title {
+      color: #12005e;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 30px;
+      margin: 0;
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 14px;
+      margin: 5px 0;
+
+      .author {
+        font-weight: 700;
+        margin: 0;
+      }
+      .divider1, .divider2 {
+        margin: 0 5px;
+      }
+      .date {
+        margin: 0;
+      }
+
+      .tags {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .description {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 600px) {
+  .date {
+    display: none;
+  }
+  .divider2 {
+    display: none;
+  }
+}

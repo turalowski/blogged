@@ -1,0 +1,44 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  background: #eeeeee!important;
+}
+
+.ant-switch-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+p code {
+  background-color: #1F2937;
+  padding: 4px 10px;
+  color: white!important;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+code {
+  
+word-break: break-word;
+white-space: pre-wrap;
+}

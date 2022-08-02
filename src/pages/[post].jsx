@@ -2,6 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { TbListDetails } from 'react-icons/tb';
 import md from 'markdown-it';
+import mdVideo from 'markdown-it-video';
 
 export default function Post({ data, content }) {
   return (
@@ -13,7 +14,7 @@ export default function Post({ data, content }) {
           alignItems: 'center',
           justifyContent: 'flex-start',
           fontWeight: '900',
-          marginBottom: '20px'
+          marginBottom: '20px',
         }}
       >
         <TbListDetails size={30} style={{ marginRight: '10px' }} />
@@ -21,7 +22,15 @@ export default function Post({ data, content }) {
         <span style={{ margin: '0 5px' }}>•</span>
         <span>{data.date}</span>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+      <div
+        dangerouslySetInnerHTML={{
+          __html: md()
+            .use(
+              mdVideo
+            )
+            .render(content),
+        }}
+      />
     </div>
   );
 }
@@ -30,7 +39,7 @@ export async function getStaticPaths() {
   const files = fs.readdirSync('posts');
   const paths = files.map(fileName => ({
     params: {
-      post: fileName
+      post: fileName,
     },
   }));
   return {
